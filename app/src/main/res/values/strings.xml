@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">project2</string>
+    <string name="back_font">&#xe605;</string>
+    <string name="detailTopText">内容详情</string>
+</resources>

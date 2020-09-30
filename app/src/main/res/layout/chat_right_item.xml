@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_right_item_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/chat_left_iv"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        tools:srcCompat="@tools:sample/avatars" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/chat_send_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginRight="110dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:background="@drawable/chatto_bg_focused"-->
+<!--        android:maxWidth="200dp"-->
+<!--        android:paddingLeft="30dp"-->
+<!--        android:paddingRight="10dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:lineSpacingExtra="1dp"-->
+<!--        android:text="是否VS大方不大方司法干部身份" />-->
+</RelativeLayout>
