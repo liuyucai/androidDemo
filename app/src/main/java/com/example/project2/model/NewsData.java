@@ -1,4 +1,4 @@
-package com.example.project2;
+package com.example.project2.model;
 
 public class NewsData {
     private String newsTitle;//新闻标题

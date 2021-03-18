@@ -1,10 +1,16 @@
-package com.example.project2;
+package com.example.project2.adapter;
 
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.example.project2.MainActivity;
+import com.example.project2.MessagePageFragment;
+import com.example.project2.MyFragment1;
+import com.example.project2.MyFragment2;
+import com.example.project2.MyFragment4;
 
 /**
  * Created by Jay on 2015/8/31 0031.
@@ -14,14 +20,14 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     private final int PAGER_COUNT = 4;
     private MyFragment1 myFragment1 = null;
     private MyFragment2 myFragment2 = null;
-    private MyFragment3 myFragment3 = null;
+    private MessagePageFragment messagePageFragment = null;
     private MyFragment4 myFragment4 = null;
 
     public MyFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
         myFragment1 = new MyFragment1();
         myFragment2 = new MyFragment2();
-        myFragment3 = new MyFragment3();
+        messagePageFragment = new MessagePageFragment();
         myFragment4 = new MyFragment4();
     }
 
@@ -53,7 +59,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
                 fragment = myFragment2;
                 break;
             case MainActivity.PAGE_THREE:
-                fragment = myFragment3;
+                fragment = messagePageFragment;
                 break;
             case MainActivity.PAGE_FOUR:
                 fragment = myFragment4;

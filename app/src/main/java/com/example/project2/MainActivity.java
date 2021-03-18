@@ -3,12 +3,18 @@ package com.example.project2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.net.Uri;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import java.io.File;
+import com.example.project2.adapter.MyFragmentPagerAdapter;
+import com.example.project2.model.EmojiEntity;
+import com.example.project2.utils.FileUtil;
+import com.example.project2.utils.JsonParseUtil;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
 
@@ -39,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
         vpager = (ViewPager) findViewById(R.id.vpager);
         vpager.setAdapter(mAdapter);
-        vpager.setCurrentItem(1);
+        vpager.setCurrentItem(2);
         vpager.addOnPageChangeListener(this);
     }
 

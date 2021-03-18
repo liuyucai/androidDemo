@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="#ccc"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="@drawable/underline"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/chat_back_icon"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:onClick="gotoBack"
+            android:clickable="true"
+            android:text="@string/back_font" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/detailTopText" />
+
+        <TextView
+            android:id="@+id/shezhiTv"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="设置" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/chat_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_bottom_bar"
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/voice_font_textView"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="&#xe678;" />
+
+        <EditText
+            android:id="@+id/et_chat_message"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:background="#ffffff"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="100dp"
+            android:text="Name" />
+        <TextView
+            android:id="@+id/emojis_font_textView"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:onClick="emojis_state_fun"
+            android:layout_alignRight="@id/tv_send"
+            android:layout_marginRight="60dp"
+            android:text="@string/emojis_open_font" />
+
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="发送" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/emojis_container"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:id="@+id/char_image_container_tv"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:onClick="emojisTypePageClickEvent"
+                android:tag="0"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/char_emojis_container_tv"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:onClick="emojisTypePageClickEvent"
+                android:tag="1"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/char_collect_emojis_container_tv"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:onClick="emojisTypePageClickEvent"
+                android:tag="2"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/p1">
+
+            <view
+                android:id="@+id/char_vp"
+                class="androidx.viewpager.widget.ViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

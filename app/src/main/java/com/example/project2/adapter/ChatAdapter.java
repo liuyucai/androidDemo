@@ -5,32 +5,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.project2.NewsData;
 import com.example.project2.R;
 import com.example.project2.model.ChatMsg;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChatAdapter extends BaseAdapter {
 
-    private EditText et_input;
-    private ChatAdapter chatAdapter;
-    private ListView lv;
-
-    private ArrayList<ChatMsg> msgs;
+    private List<ChatMsg> msgs;
 
     private LayoutInflater layoutInflater;
     private Context context;
 
     public ChatAdapter(Context context, List<ChatMsg> msgs) {
-        this.msgs = (ArrayList<ChatMsg>) msgs;
+        this.msgs = msgs;
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
     }
@@ -41,7 +32,7 @@ public class ChatAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
+    public ChatMsg getItem(int i) {
         return msgs.get(i);
     }
 
@@ -54,15 +45,15 @@ public class ChatAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
         if (view == null) {
-//            holder = new ViewHolder(view);
-//            view = layoutInflater.inflate(R.layout.chat_item, null);//找到布局文件
-            view = View.inflate(context,R.layout.chat_item, null);//找到布局文件
+            view = layoutInflater.inflate(R.layout.chat_item, null);//找到布局文件
+//            view = View.inflate(context,R.layout.chat_item, null);//找到布局文件
             holder = new ViewHolder(view);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        ChatMsg chatMsg = (ChatMsg) getItem(i);
+        ChatMsg chatMsg = getItem(i);
+
         if (chatMsg.getType() == ChatMsg.TYPE_RECEIVE) {
             //设置元素是否可见
             holder.chat_resceive.setVisibility(View.VISIBLE);

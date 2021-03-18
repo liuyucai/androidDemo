@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">project2</string>
     <string name="back_font">&#xe605;</string>
+    <string name="voice_open_font">&#xe678;</string>
+    <string name="emojis_open_font">&#xe67e;</string>
+    <string name="emojis_close_font">&#xe675;</string>
+    <string name="pic_font">&#xe788;</string>
+    <string name="collect_font">&#xe7b3;</string>
+    <string name="collect_activity_font">&#xe721;</string>
+    <string name="read_font">&#xe666;</string>
+    <string name="comment_font">&#xe669;</string>
+    <string name="itme_collect_font">&#xe600;</string>
+    <string name="itme_collect_activity_font">&#xe60b;</string>
     <string name="detailTopText">内容详情</string>
+    <string name="emojis_tip">内容详情</string>
 </resources>

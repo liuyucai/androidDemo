@@ -1,7 +1,6 @@
-package com.example.project2;
+package com.example.project2.adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,17 +8,21 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.project2.R;
+import com.example.project2.model.MessageData;
+import com.example.project2.model.NewsData;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyAdapter extends BaseAdapter {
+public class MessagePageAdapter extends BaseAdapter {
 
-    private List<NewsData> datas = new ArrayList<NewsData>();//新闻列表集合
+    private List<MessageData> datas = new ArrayList<MessageData>();//新闻列表集合
 
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public MyAdapter(Context context, List<NewsData> datas) {
+    public MessagePageAdapter(Context context, List<MessageData> datas) {
         this.datas = datas;
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
@@ -31,7 +34,7 @@ public class MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public NewsData getItem(int position) {
+    public MessageData getItem(int position) {
         return datas.get(position); //通过列表的位置 获得集合中的对象
     }
 
@@ -44,7 +47,7 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.list_item, null);//找到布局文件
+            convertView = layoutInflater.inflate(R.layout.message_page_list_item, null);//找到布局文件
             convertView.setTag(new ViewHolder(convertView));
         }
         initViews(getItem(position), (ViewHolder) convertView.getTag());
@@ -52,7 +55,7 @@ public class MyAdapter extends BaseAdapter {
 
     }
 
-    private void initViews(NewsData data, ViewHolder holder) {//初始化数据
+    private void initViews(MessageData data, ViewHolder holder) {//初始化数据
 
         /**
          * 第一次初始话的时候通过 要请求的Url地址 为每个图片设置一个Tag标记,
@@ -78,9 +81,9 @@ public class MyAdapter extends BaseAdapter {
         private TextView tvDate;
 
         public ViewHolder(View view) {
-            ivImg = (ImageView) view.findViewById(R.id.iv_img);
-            tvTitle = (TextView) view.findViewById(R.id.tv_title);
-            tvDate = (TextView) view.findViewById(R.id.tv_date);
+            ivImg = (ImageView) view.findViewById(R.id.message_page_iv_img);
+            tvTitle = (TextView) view.findViewById(R.id.message_page_tv_title);
+            tvDate = (TextView) view.findViewById(R.id.message_page_tv_date);
         }
     }
 

@@ -10,7 +10,10 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.project2.adapter.MessagePageAdapter;
 import com.example.project2.adapter.MyAdapter;
+import com.example.project2.charPage.CharActivity;
+import com.example.project2.model.MessageData;
 import com.example.project2.model.NewsData;
 
 import java.util.ArrayList;
@@ -19,7 +22,7 @@ import java.util.List;
 /**
  * Created by Jay on 2015/8/28 0028.
  */
-public class MyFragment1 extends Fragment{
+public class MessagePageFragment extends Fragment {
 
     /**
      * ListView对象
@@ -29,32 +32,32 @@ public class MyFragment1 extends Fragment{
     /**
      * 新闻集合对象
      */
-    private List<NewsData> datas;
+    private List<MessageData> datas;
 
 
     /**
      * 自定义的Adapter对象
      */
-    private MyAdapter adapter;
+    private MessagePageAdapter adapter;
 
-    public MyFragment1() {
+    public MessagePageFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.index, container, false);
-        listView = (ListView) view.findViewById(R.id.listView1);
-        datas = new ArrayList<NewsData>();
+        View view = inflater.inflate(R.layout.message_page, container, false);
+        listView = (ListView) view.findViewById(R.id.messagePageListView);
+        datas = new ArrayList<MessageData>();
         for (int i = 0; i <10; i++) {
-            NewsData data = new NewsData();
+            MessageData data = new MessageData();
             data.setNewsTitle("title"+i);
             data.setNewsDate("date"+i);
             data.setNewsImgUrl("thumbnail_pic_s"+i);
             data.setNewsUrl("R.drawable.p1");
             datas.add(data);
         }
-        adapter = new MyAdapter(getActivity(), datas);
+        adapter = new MessagePageAdapter(getActivity(), datas);
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -67,23 +70,13 @@ public class MyFragment1 extends Fragment{
                 /**
                  * 创建一个意图
                  */
-                Intent intent = new Intent(getActivity(),NewsInfoActivity.class);
-
-                /**
-                 * 在datas中通过点击的位置position通过get()方法获得具体某个新闻
-                 * 的数据然后通过Intent的putExtra()传递到NewsInfoActivity中
-                 */
-                intent.putExtra("newsTitle", datas.get(position).getNewsTitle());
-                intent.putExtra("newsDate", datas.get(position).getNewsDate());
-                intent.putExtra("newsImgUrl", datas.get(position).getNewsImgUrl());
-                intent.putExtra("newsUrl", datas.get(position).getNewsUrl());
+                Intent intent = new Intent(getActivity(), CharActivity.class);
 
                 //需要在AndroidManifest.xml配置新增加的AppCompatActivity类，NewsInfoActivity
-                MyFragment1.this.startActivity(intent);//启动Activity
+                MessagePageFragment.this.startActivity(intent);//启动Activity
 
             }
         });
         return view;
     }
-
 }
